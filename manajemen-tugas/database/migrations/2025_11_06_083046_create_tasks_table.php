@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->foreignId('category_id')->nullable()->constrained()->nullOnDelete();
             $table->string('judul');
             $table->text('deskripsi')->nullable();
             $table->date('tanggal_deadline')->nullable();
             $table->enum('prioritas', ['rendah', 'sedang', 'tinggi'])->default('sedang');
-            $table->enum('status', ['belum', 'sedang', 'selesai'])->default('belum');
+$table->enum('status', ['Belum Mulai', 'Proses', 'Selesai'])->default('Belum Mulai');
             $table->timestamps();
         });
     }

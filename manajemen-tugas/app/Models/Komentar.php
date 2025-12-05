@@ -3,11 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Komentar extends Model
 {
-    protected $fillable = ['project_id', 'user_id', 'task_id', 'isi_komentar'];
+    protected $table = 'comments'; 
+
+    protected $fillable = [
+        'project_id',
+        'user_id',
+        'isi_komentar',
+    ];
 
     public function proyek()
     {
@@ -19,4 +24,3 @@ class Komentar extends Model
         return $this->belongsTo(User::class);
     }
 }
-

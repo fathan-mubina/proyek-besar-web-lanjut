@@ -33,6 +33,12 @@ class User extends Authenticatable
         return $this->hasMany(comment::class);
     }
 
+    public function assignedTasks()
+{
+    return $this->hasMany(Task::class, 'assigned_to');
+}
+
+
     /**
      * The attributes that should be hidden for serialization.
      *

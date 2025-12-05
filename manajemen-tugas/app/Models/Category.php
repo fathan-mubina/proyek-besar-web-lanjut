@@ -9,10 +9,13 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama_kategori', 'deskripsi'];
+    protected $fillable = [
+        'nama_kategori',
+        'deskripsi',
+    ];
 
-    public function tasks()
+    public function tugas()
     {
-        return $this->hasMany(Task::class);
+        return $this->hasMany(Tugas::class, 'kategori_id');
     }
 }
