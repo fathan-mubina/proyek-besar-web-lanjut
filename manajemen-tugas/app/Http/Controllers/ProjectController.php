@@ -115,5 +115,25 @@ class ProjectController extends Controller
 
         return redirect()->route('proyek.index')
             ->with('success', 'Proyek berhasil dihapus!');
+
     }
+    
+// Tambah anggota ke proyek Method
+    public function addMember(Request $request, $id)
+{
+    $request->validate([
+        'user_id' => 'required|exists:users,id',
+    ]);
+
+    $project = Project::where('user_id', auth()->id())
+        ->findOrFail($id);
+
+    // Biar ga duplikat membernya
+    $project->anggota()->syncWithoutDetaching([$request->user_id]);
+
+    return redirect()
+        ->back()
+        ->with('success', 'Anggota berhasil ditambahkan');
+}
+
 }
