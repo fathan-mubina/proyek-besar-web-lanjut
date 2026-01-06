@@ -37,7 +37,7 @@
 
 
 <!-- BLACK ROUNDED SECTION -->
-<section class="relative w-full bg-[#1E181B] rounded-t-[150px] px-6 pt-32 pb-24">
+<section class="relative w-full bg-[#1E181B] rounded-t-[150px] px-6 pt-16 pb-29 -mt-20">
 
     <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
 

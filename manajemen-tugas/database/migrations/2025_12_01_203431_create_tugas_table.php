@@ -15,7 +15,7 @@ return new class extends Migration
         $table->id();
         $table->string('judul');
         $table->text('deskripsi')->nullable();
-        $table->string('status')->default('Belum Mulai');
+        $table->string('status')->default('Belum_Mulai');
         $table->string('prioritas')->default('Rendah');
         $table->string('kategori')->nullable();
         $table->date('deadline')->nullable();

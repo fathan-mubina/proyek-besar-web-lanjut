@@ -48,8 +48,8 @@
                             required
                             class="mt-2 w-full px-4 py-3 bg-gray-100 border rounded-xl focus:ring-2 focus:ring-black outline-none">
                         <option value="">Pilih status</option>
-                        <option value="Belum Mulai" {{ old('status') == 'Belum Mulai' ? 'selected' : '' }}>Belum Mulai</option>
-                        <option value="Sedang" {{ old('status') == 'Sedang' ? 'selected' : '' }}>Sedang</option>
+                        <option value="Belum_Mulai" {{ old('status') == 'Belum Mulai' ? 'selected' : '' }}>Belum Mulai</option>
+                        <option value="Sedang" {{ old('status') == 'Sedang' ? 'selected' : '' }}>Proses</option>
                         <option value="Selesai" {{ old('status') == 'Selesai' ? 'selected' : '' }}>Selesai</option>
                     </select>
                     @error('status')
